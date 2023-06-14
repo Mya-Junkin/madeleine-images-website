@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// font palellete
+import './assests/fonts/aqua/aqua.ttf';  // headers & titles
+import './assests/fonts/roboto-slab/RobotoSlab-Regular.ttf';  // body text
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
