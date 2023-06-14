@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
-import { Drawer, List, IconButton, ListItem, ListItemText } from '@mui/material/'
+import { Drawer, List, IconButton, ListItemButton, ListItemText } from '@mui/material/'
 import logo from '../assests/logo.png'
 import facebookIcon from '../assests/facebook-icon.png'
 import instagramIcon from '../assests/instagram-icon.png'
 import gmailIcon from '../assests/gmail-icon.png'
+import { Link } from 'react-router-dom'
 
 
 const Sidebar = () => {
     
   const [open, setOpen] = useState(false);
+  const [selectedIndex, setSelected] = useState(0);
 
     return(
         <div>
@@ -23,29 +25,41 @@ const Sidebar = () => {
                 </IconButton>
 
                 <List component="nav" aria-label="navigation sidebar">
-                    <ListItem button>
-                    <ListItemText>home</ListItemText>
-                    </ListItem>
-                    
-                    <ListItem button>
-                    <ListItemText>about</ListItemText>
-                    </ListItem>
+                    <Link to='/'>
+                    <ListItemButton selected={selectedIndex === 0} onClick={() => setSelected(0)}>
+                    <ListItemText primary={"home"} />
+                    </ListItemButton>
+                    </Link>
 
-                    <ListItem button>
-                    <ListItemText>athletics</ListItemText>
-                    </ListItem>
+                    <Link to='/about'>
+                    <ListItemButton selected={selectedIndex === 1} onClick={() => setSelected(1)}>
+                    <ListItemText primary={"about"} />
+                    </ListItemButton>
+                    </Link>
 
-                    <ListItem button>
-                    <ListItemText>headshots</ListItemText>
-                    </ListItem>
+                    <Link to='/athletics'>
+                    <ListItemButton selected={selectedIndex === 2} onClick={() => setSelected(2)}>
+                    <ListItemText primary={"athletics"} />
+                    </ListItemButton>
+                    </Link>
 
-                    <ListItem button>
-                    <ListItemText>seniors</ListItemText>
-                    </ListItem>
+                    <Link to='/headshots'>
+                    <ListItemButton selected={selectedIndex === 3} onClick={() => setSelected(3)}>
+                    <ListItemText primary={"headshots"} />
+                    </ListItemButton>
+                    </Link>
 
-                    <ListItem button>
-                    <ListItemText>boudoir</ListItemText>
-                    </ListItem>
+                    <Link to='/seniors'>
+                    <ListItemButton selected={selectedIndex === 4} onClick={() => setSelected(4)}>
+                    <ListItemText primary={"seniors"} />
+                    </ListItemButton>
+                    </Link>
+
+                    <Link to='/boudoir'>
+                    <ListItemButton selected={selectedIndex === 5} onClick={() => setSelected(5)}>
+                    <ListItemText primary={"boudoir"} />
+                    </ListItemButton>
+                    </Link>
                 </List>
                 <p>
                     Madeleine Images<br/>
